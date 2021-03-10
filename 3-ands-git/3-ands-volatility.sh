@@ -1,3 +1,4 @@
+#test
 curl -s https://yandex.ru/news/quotes/graph_2000.json > ./quotes.json
 jq -r '.prices[] | "\(.[0])\t\(.[1])"' quotes.json > jsonValue.txt
 cut -c 1-10 jsonValue.txt | jq 'todate' | cut -c 2-11 > dates.txt
